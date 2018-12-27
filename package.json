@@ -11,7 +11,11 @@
     "url": "git+https://github.com/hetima/hyper-wsl-path.git"
   },
   "keywords": [
-    "Windows"
+    "Windows",
+    "hyper",
+    "hyperterm",
+    "hyper-plugin",
+    "wsl"
   ],
   "author": "hetima <hetima@hetima.com>",
   "license": "MIT",
