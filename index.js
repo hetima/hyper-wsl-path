@@ -5,13 +5,14 @@ exports.onWindow = win => {
     // remove original listener
     let listeners = win.webContents.listeners('will-navigate');
     for (var i = listeners.length-1; i>= 0; i--) {
-        if ( listeners[i].toString().indexOf("parseUrl(url).protocol") > -1 ){
+        if ( listeners[i].toString().indexOf("ThisIsWslPathListener") > 0 ||
+             listeners[i].toString().indexOf("parseUrl(url).protocol") > 0 ){
             win.webContents.removeListener('will-navigate', listeners[i]);
-            break;
         }
     }
 
     win.webContents.on('will-navigate', (event, url) => {
+        const ThisIsWslPathListener = null;
         if (typeof url === 'string' && url.length > 10 && url.indexOf('file:///') == 0){
             let path = url.substr(8);
             const colon = path.indexOf(':');
