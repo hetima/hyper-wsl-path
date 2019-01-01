@@ -1,6 +1,6 @@
 {
   "name": "hyper-wsl-path",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dropping a file/dir makes suitable path for Windows Subsystem for Linux.",
   "main": "index.js",
   "scripts": {
