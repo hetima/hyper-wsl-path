@@ -14,7 +14,7 @@ exports.onWindow = win => {
     win.webContents.on('will-navigate', (event, url) => {
         const ThisIsWslPathListener = null;
         if (typeof url === 'string' && url.length > 10 && url.indexOf('file:///') == 0){
-            let path = url.substr(8);
+            let path = decodeURI(url.substr(8));
             const colon = path.indexOf(':');
             const drive = path.substr(0, colon).toLowerCase(); // 'c'
             path = path.substr(colon + 1); // '/path/to~'
